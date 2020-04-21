@@ -1,5 +1,6 @@
 package com.example.revalform;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class view_results extends Fragment {
+
+    public static final String EXTRA_NAME = "com.example.revalform.NAME";
+    public static final String EXTRA_USN = "com.example.revalform.USN";
+
+
     Spinner semsdropdown,depdropdown;
     Button sub;
     String usnval;
@@ -36,19 +42,26 @@ public class view_results extends Fragment {
                 String usnval = usn.getText().toString();
                 String semyo = semsdropdown.getSelectedItem().toString();
                // Toast.makeText(getActivity(), usnval, Toast.LENGTH_SHORT).show();
-                if (!usnval.matches(usnMatch)) {
+                if (!usnval.matches(usnMatch) && (usnval!="")) {
                     Toast.makeText(getActivity(), "Enter Proper Usn", Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(getActivity(), semyo, Toast.LENGTH_SHORT).show();
+                else {
+                    //Intent intent = new Intent(this, DisplayMessageActivity.class);
+                    Intent intent = new Intent(getActivity(), DisplayMessageActivity.class);
+                    intent.putExtra(EXTRA_NAME, semyo);
+                    intent.putExtra(EXTRA_USN, usnval);
+                    startActivity(intent);
+                    //Toast.makeText(getActivity(), semyo, Toast.LENGTH_SHORT).show();
+                }
             }
         });
         return rootview;
     }
     private void initspinnerfooter(){
         String[] semitems =new String[]{
-                "1","2","3","4","5","6","7","8"};
+                "one","two","three","four","five","six","seven","eight"};
         String[] depitems =new String[]{
-                "CSE","ISE","EEE","ME","ECE","CVE","TE","CE","hatroo"};
+                "CSE","ISE","EEE","ME","ECE","CVE","TE","CE","BIO"};
         ArrayAdapter<String> semadapter =new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_dropdown_item,semitems);
         semsdropdown.setAdapter(semadapter);
         semsdropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

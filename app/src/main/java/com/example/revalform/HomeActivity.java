@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class HomeActivity extends AppCompatActivity {
+
     FirebaseAuth mFirebaseAuth;
     TextView verifymsg;
     Button btnlogout,resendCode;

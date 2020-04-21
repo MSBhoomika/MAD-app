@@ -37,6 +37,12 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
+    <string name="subject_code">Subject</string>
+    <string name="internal">CIE</string>
+    <string name="external">SEE</string>
+    <string name="total">Total</string>
+<!--    <string name="grade">Grade</string>-->
+
     <string-array name="semarray">
         <item>1</item>
         <item>2</item>
