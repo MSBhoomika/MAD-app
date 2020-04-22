@@ -12,17 +12,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeverifyActivity"></activity>
+        <activity
+            android:name=".ScrollingActivity4"
+            android:label="@string/title_activity_scrolling4"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ScrollingActivity3"
+            android:label="@string/title_activity_scrolling3"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ScrollingActivity2"
+            android:label="@string/title_activity_scrolling2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".HomeverifyActivity" />
         <activity
             android:name=".ScrollingActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DisplayMessageActivity" />
-
-
-
         <activity android:name=".MainActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity">

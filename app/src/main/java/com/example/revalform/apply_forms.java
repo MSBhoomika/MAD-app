@@ -17,28 +17,58 @@ public class apply_forms extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootview=inflater.inflate(R.layout.apply_forms_frag,container,false);
-        Button btreval= rootview.findViewById(R.id.reval);
-
 
         return inflater.inflate(R.layout.apply_forms_frag,container,false);
-
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        Button newBlockButton = (Button) getActivity().findViewById(
+        Button revalbutton = (Button) getActivity().findViewById(
                 R.id.reval);
-        newBlockButton.setOnClickListener((View.OnClickListener) this);
+        revalbutton.setOnClickListener((View.OnClickListener) this);
+
+        Button recountbutton = (Button) getActivity().findViewById(
+                R.id.recount);
+        recountbutton.setOnClickListener((View.OnClickListener) this);
+
+        Button challengebutton = (Button) getActivity().findViewById(
+                R.id.challenge);
+        challengebutton.setOnClickListener((View.OnClickListener) this);
+
+        Button photocopybutton = (Button) getActivity().findViewById(
+                R.id.photo_copy);
+        photocopybutton.setOnClickListener((View.OnClickListener) this);
     }
 
     @Override
     public void onClick(View v) {
 
-        Intent i=new Intent(getActivity(), ScrollingActivity.class);
+        switch(v.getId()){
+            case R.id.reval:
+                Intent i=new Intent(getActivity(), ScrollingActivity.class);
+                startActivity(i);
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+                break;
 
-        startActivity(i);
-        ((Activity) getActivity()).overridePendingTransition(0, 0);
+            case R.id.recount:
+                Intent j=new Intent(getActivity(), ScrollingActivity2.class);
+                startActivity(j);
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+                break;
+
+            case R.id.challenge:
+                Intent k=new Intent(getActivity(), ScrollingActivity3.class);
+                startActivity(k);
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+                break;
+
+            case R.id.photo_copy:
+                Intent l=new Intent(getActivity(), ScrollingActivity4.class);
+                startActivity(l);
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+                break;
+        }
+
     }
 
 
